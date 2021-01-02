@@ -1,6 +1,13 @@
-export type CategoryType = 'movies' | 'tv_series';
+import {Categories} from '../types';
 
-export const CATEGORIES: {[key: string]: CategoryType} = {
-  MOVIES: 'movies',
-  TV_SERIES: 'tv_series'
+export const CATEGORIES: Categories = {
+  MOVIE: 'movie',
+  TV: 'tv'
+};
+
+const {MOVIE, TV} = CATEGORIES;
+
+export const TRENDING_TYPES = {
+  [MOVIE]: 'Movies',
+  [TV]: 'TV Series'
 };

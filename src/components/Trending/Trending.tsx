@@ -1,17 +1,11 @@
 import {useEffect} from 'react';
-import {CATEGORIES, CategoryType} from '../../constants';
+import {TRENDING_TYPES} from '../../constants';
+import {Category} from '../../types';
 
 import './Trending.scss';
-
-const {MOVIES, TV_SERIES} = CATEGORIES;
-const TRENDING_TYPES = {
-  [MOVIES]: 'Movies',
-  [TV_SERIES]: 'TV Series'
-};
-
 interface TrendingProps {
   className: string;
-  type: CategoryType;
+  type: Category;
 }
 
 const Trending = (props: TrendingProps) => {
