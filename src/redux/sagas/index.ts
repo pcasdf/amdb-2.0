@@ -11,7 +11,15 @@ const OMDB_URL = 'https://www.omdbapi.com/?apikey=fdbaa0a9';
 
 function* fetchTrending(type: Category) {
   try {
-    const response = yield call(axios.get, [`${TMDB_BASE}/trending/${type}/week?api_key=${KEY}&page=1`]);
-    yield put(setResults(response));
-  } catch (error) {}
+    yield put(setStatusPending({type}));
+    const response = yield call<any>(axios.get, [`${TMDB_BASE}/trending/${type}/week?api_key=${KEY}&page=1`]);
+    yield put(setResults({type, results: response}));
+  } catch (error) {
+    console.log('error', error);
+    yield put(setStatusFailed({type}));
+  }
+}
+
+export function* fetchTrendingSaga() {
+  yield takeLatest<any>(setResults, fetchTrending);
 }

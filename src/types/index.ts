@@ -10,4 +10,5 @@ export interface LoadingStatuses {
   PENDING: 'PENDING';
   FAILED: 'FAILED';
   SUCCESS: 'SUCCESS';
+  NOT_LOADED: 'NOT_LOADED';
 }
