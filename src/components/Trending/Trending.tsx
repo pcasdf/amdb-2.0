@@ -7,6 +7,7 @@ import {Category} from '../../types';
 import './Trending.scss';
 
 const {MOVIE, TV} = CATEGORIES;
+
 interface TrendingProps {
   className: string;
   type: Category;
@@ -18,8 +19,8 @@ const Trending = (props: TrendingProps) => {
   
   useEffect(() => {
     fetchTrending(type).then(response => {
-      if (response?.status === 200) {
-        setTrending(response.data)
+      if (response?.status === 200 && response.data?.results) {
+        setTrending(response.data.results);
       }
     });
   }, [type]);
