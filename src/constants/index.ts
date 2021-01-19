@@ -1,4 +1,4 @@
-import {Categories} from '../types';
+import {Categories, LoadingStatuses} from '../types';
 
 export const CATEGORIES: Categories = {
   MOVIE: 'movie',
@@ -12,7 +12,7 @@ export const TRENDING_TYPES = {
   [TV]: 'TV Series'
 };
 
-export const LOADING_STATUSES = {
+export const LOADING_STATUSES: LoadingStatuses = {
   NOT_LOADED: 'NOT_LOADED',
   PENDING: 'PENDING',
   FAILED: 'FAILED',
