@@ -8,6 +8,10 @@ const {NOT_LOADED, PENDING, FAILED, SUCCESS} = LOADING_STATUSES;
 type LoadingStatus = keyof LoadingStatuses;
 type Results = any[];
 
+interface TrendingPayload {
+  type: Category;
+}
+
 interface ResultsPayload {
   results: any[];
   type: Category;
@@ -27,7 +31,7 @@ const trendingSlice = createSlice({
   name: 'trending',
   initialState,
   reducers: {
-    fetchTrending: (state, action: PayloadAction<Category>) => {},
+    fetchTrending: (state, action: PayloadAction<TrendingPayload>) => {},
     setResults: (state, action: PayloadAction<ResultsPayload>) => {
       const {type, results} = action.payload;
       state[type] = {
@@ -35,12 +39,12 @@ const trendingSlice = createSlice({
         results
       };
     },
-    setStatusPending: (state, action: PayloadAction<Category>) => {
-      const type = action.payload;
+    setStatusPending: (state, action: PayloadAction<TrendingPayload>) => {
+      const {type} = action.payload;
       state[type].loadingStatus = PENDING;
     },
-    setStatusFailed: (state, action: PayloadAction<Category>) => {
-      const type = action.payload;
+    setStatusFailed: (state, action: PayloadAction<TrendingPayload>) => {
+      const {type} = action.payload;
       state[type].loadingStatus = FAILED;
     }
   }

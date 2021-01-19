@@ -12,3 +12,13 @@ export interface LoadingStatuses {
   SUCCESS: 'SUCCESS';
   NOT_LOADED: 'NOT_LOADED';
 }
+
+export interface Result {
+  title: string;
+  vote_count: number;
+  vote_average: number;
+  media_type: string;
+  id: number;
+  overview: string;
+  poster_path: string;
+}
