@@ -6,6 +6,7 @@ import App from './App';
 import './index.scss';
 
 // this is a comment!
+// this is another comment!
 
 ReactDOM.render(
   <Provider store={store}>
