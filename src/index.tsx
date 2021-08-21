@@ -5,6 +5,7 @@ import store from './redux/store';
 import App from './App';
 import './index.scss';
 
+// added a fourth
 // this is a comment!
 // this is another comment!
 
