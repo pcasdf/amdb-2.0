@@ -7,6 +7,7 @@ import './index.scss';
 
 // this is a comment!
 // this is another comment!
+// testing more
 
 ReactDOM.render(
   <Provider store={store}>
