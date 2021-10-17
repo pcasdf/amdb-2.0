@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.nav {
+  width: 100%;
+  background: $blue;
+  height: 64px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  font-size: 20px;
+}

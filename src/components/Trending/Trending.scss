@@ -1,0 +1,43 @@
+@import '../../styles/colors';
+
+.trending-container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  
+  .trending-header {
+    font-weight: 500;
+    color: $blue;
+  }
+
+  .trending-carousel {
+    display: flex;
+    align-items: center;
+
+    .trending-carousel-items {
+      display: flex;
+      flex: auto;
+      justify-content: space-between;
+
+      .carousel-item {
+        .carousel-image {
+          width: 200px;
+          height: auto;
+          border-radius: 5px;
+          box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+    .carousel-right-arrow {
+      display: flex;
+      justify-content: center;
+      width: 60px;
+
+      .right-arrow-icon {
+        width: 40px;
+      }
+    }
+  }
+}
